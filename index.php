@@ -17,11 +17,20 @@ class main
 		echo "The value of \$year:";
                 print_r($year);
 
-                echo '<br>';
-                
-		change::stringreplace($date);
-		
+                echo  htmlTags::horizontalRule();
 
+		echo  htmlTags::headingOne("Replace String");
+		change::stringreplace($date);
+		echo htmlTags::horizontalRule();
+
+		echo htmlTags::headingOne("String Compare");
+		change::stringcompare($date,$tar);
+		echo  htmlTags::horizontalRule();
+                
+		echo htmlTags::headingOne("String Position");
+		//class name::function name(variable passed)//
+		change::stringposition(str_replace("-","/",$date));
+		echo htmlTags::horizontalRule();
 		}
 }
 
@@ -39,7 +48,37 @@ class main
 		  echo 'The new $date is : '.str_replace('-','/',$date);
 		  }
 
-		 
+		  static public function stringcompare($date,$tar)
+		   {
+		    echo '<br>';
+		    $result=strcmp($date,$tar);
+		    if($result==0)
+		      {
+		      echo "Oops";
+		      }
+		      else if($result>0)
+		        {
+			echo "The future";
+			}
+		          else{
+			       echo "The past";
+			       }
+		    }
+
+
+
+}
+
+  		class htmlTags
+		{
+		static public function horizontalRule()
+		{
+		return '<hr>';
 		}
 
+		static public function headingOne($text)
+		{
+		return '<h1>' .$text. '</h1>';
+		}
+		}
 ?>
