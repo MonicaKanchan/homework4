@@ -28,7 +28,7 @@ class main
 		echo  htmlTags::horizontalRule();
                 
 		echo htmlTags::headingOne("String Position");
-		//class name::function name(variable passed)//
+		//class name::function name(variable called)//
 		change::stringposition(str_replace("-","/",$date));
 		echo htmlTags::horizontalRule();
 		}
@@ -63,7 +63,17 @@ class main
 		          else{
 			       echo "The past";
 			       }
+		    
+		   }
+		   static public function stringposition($date)
+		   {
+		    for($x=0; $x<substr_count($date,"/");$x++)
+		    {
+		    $i=$i+1;
+		    $i=stripos($date,"/",$i);
+		    echo 'The position of / is: '. $i .' ';
 		    }
+		   }
 
 
 
