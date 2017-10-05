@@ -17,7 +17,7 @@ class main
 		echo "The value of \$year:";
                 print_r($year);
 
-                echo  htmlTags::horizontalRule();
+                echo htmlTags::horizontalRule();
 
 		echo  htmlTags::headingOne("Replace String");
 		change::stringreplace($date);
@@ -31,13 +31,18 @@ class main
 		//class name::function name(variable called)//
 		change::stringposition(str_replace("-","/",$date));
 		echo htmlTags::horizontalRule();
+		
+		echo htmlTags::headingOne("String Count");
+		change::stringcount($date);
+		echo htmlTags::hhorizontalRule();
+
 		}
 }
 
 
 	function __destruct()
 	       {
-	        print_r($this->html);
+	        print($this->html);
 	       }
 
 	      class Change
@@ -74,7 +79,14 @@ class main
 		    echo 'The position of / is: '. $i .' ';
 		    }
 		   }
+		   static public function stringcount($date)
+		   {
+		   $scount=str_word_count($date);
+		   echo 'The number of words in $date is: '.$scount;
+		   }
 
+
+                   
 
 
 }
