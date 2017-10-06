@@ -39,7 +39,12 @@ class main
 		echo htmlTags::headingOne("String Length");
 		change::stringLength($date);
 		echo htmlTags::horizontalRule();
-		}
+                
+		echo htmlTags::headingOne("Ascii Value ");
+		change::stringascii($date);
+		echo htmlTags::horizontalRule();
+
+}
 }
 
 
@@ -93,6 +98,13 @@ class main
 		   $result1=strlen($date);
 		   echo 'The length of the string is:'.$result1;
 		   }
+
+		   static public function stringascii($date)
+		   {
+		   echo 'The ascii value of the first character of the string
+		   is: ' .ord($date);
+		   }
+
 
                    
 
