@@ -34,8 +34,11 @@ class main
 		
 		echo htmlTags::headingOne("String Count");
 		change::stringcount($date);
-		echo htmlTags::hhorizontalRule();
-
+		echo htmlTags::horizontalRule();
+                
+		echo htmlTags::headingOne("String Length");
+		change::stringLength($date);
+		echo htmlTags::horizontalRule();
 		}
 }
 
@@ -85,6 +88,11 @@ class main
 		   echo 'The number of words in $date is: '.$scount;
 		   }
 
+                   static public function stringLength($date)
+		   {
+		   $result1=strlen($date);
+		   echo 'The length of the string is:'.$result1;
+		   }
 
                    
 
