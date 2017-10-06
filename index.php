@@ -48,6 +48,9 @@ class main
 		change::stringsplit($date);
 		echo htmlTags::horizontalRule();
 		
+		echo htmlTags::headingOne("Separator");
+		change::separator(str_replace("-","/",$date));
+		echo htmlTags::horizontalRule();
 }
 }
 
@@ -84,33 +87,45 @@ class main
 		   }
 		   static public function stringposition($date)
 		   {
+		   echo '<br>';
 		    for($x=0; $x<substr_count($date,"/");$x++)
 		    {
 		    $i=$i+1;
 		    $i=stripos($date,"/",$i);
 		    echo 'The position of / is: '. $i .' ';
-		    }
+		    
+		  }
+		    echo '<br>';
 		   }
+
 		   static public function stringcount($date)
 		   {
+		   echo '<br>';
 		   $scount=str_word_count($date);
 		   echo 'The number of words in $date is: '.$scount;
+		   echo '<br>';
 		   }
 
                    static public function stringLength($date)
 		   {
+		   echo '<br>';
 		   $result1=strlen($date);
 		   echo 'The length of the string is:'.$result1;
+		   echo '<br>';
 		   }
 
 		   static public function stringascii($date)
 		   {
+		   echo '<br>';
 		   echo 'The ascii value of the first character of the string
 		   is: ' .ord($date);  
-		  }
+		   echo '<br>';
+		 }
+
 		   
 		   static public function stringsplit($date)
 		   {
+		   echo '<br>';
 		   echo 'The last two characters of the date are: ';
 		   $array=str_split($date);
 		   $a=count($array);
@@ -120,8 +135,23 @@ class main
 
 		   echo $array[$a];
 		   echo ' ';
+		   
 		   }
+		   echo '<br>';
 		   }
+
+		   static public function separator($date)
+		   {
+		   echo 'The separator date is: ';
+		   $array=(explode("/",($date)));
+		   $a=count($array);
+		   for($x=0; $x<$a; $x++)
+		   {
+		   echo $array[$x] .' ';
+		   }
+		   echo '<br>';
+		   }
+
 
 
                    
