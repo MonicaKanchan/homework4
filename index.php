@@ -51,6 +51,10 @@ class main
 		echo htmlTags::headingOne("Separator");
 		change::separator(str_replace("-","/",$date));
 		echo htmlTags::horizontalRule();
+
+		echo htmlTags::headingOne("Leap Year");
+		change::leapyear($year);
+		echo htmlTags::horizontalRule();
 }
 }
 
@@ -151,6 +155,28 @@ class main
 		   }
 		   echo '<br>';
 		   }
+
+		   static public function leapyear($year)
+		   {
+		   echo '<br>';
+		   foreach($year as $result)
+		   {
+		   for($i=0; $i<1; $i++)
+		   {
+		   switch(result)
+		   {
+		   case(($result%4)==0 and ($result%100)!=0 or
+		   ($result%400)==0);
+		   echo $result.'->'. 'True'.'<br>';
+		   break;
+
+		   default:
+		   echo $result.'->'.'False'.'<br>';
+		   }
+		   }
+		   }
+		   }
+
 
 
 
