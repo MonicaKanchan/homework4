@@ -44,6 +44,10 @@ class main
 		change::stringascii($date);
 		echo htmlTags::horizontalRule();
 
+		echo htmlTags::headingOne("Last two character");
+		change::stringsplit($date);
+		echo htmlTags::horizontalRule();
+		
 }
 }
 
@@ -102,7 +106,21 @@ class main
 		   static public function stringascii($date)
 		   {
 		   echo 'The ascii value of the first character of the string
-		   is: ' .ord($date);
+		   is: ' .ord($date);  
+		  }
+		   
+		   static public function stringsplit($date)
+		   {
+		   echo 'The last two characters of the date are: ';
+		   $array=str_split($date);
+		   $a=count($array);
+		   for($i=0;$i<2;$i++)
+		   {
+		   $a=$a-1;
+
+		   echo $array[$a];
+		   echo ' ';
+		   }
 		   }
 
 
